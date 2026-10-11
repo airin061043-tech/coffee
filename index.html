@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airin COFFEE - กาแฟสด รสชาติเยี่ยม บรรยากาศเป็นกันเอง</title>
+    <meta name="description" content="Airin COFFEE ร้านกาแฟขนาดเล็กที่ใส่ใจทุกแก้ว จำหน่ายกาแฟ ชา โกโก้ และเครื่องดื่มสูตรพิเศษ">
+
+    <link rel="shortcut icon" href="./image/cafe.png" type="image/x-icon">
+
+    <!-- Google Font: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom Palette based on user image
+                        sage: {
+                            50: '#F4F8F6',
+                            100: '#E7EFEB',
+                            200: '#D9E6E2', // Swatch 1: Sage green
+                            300: '#BBD2CA',
+                            600: '#5F8578',
+                            800: '#2D443B',
+                        },
+                        peach: {
+                            50: '#FFF9F6',
+                            100: '#FEE6DC', // Swatch 2: Warm soft peach
+                            200: '#FBD4C5',
+                        },
+                        pink: {
+                            100: '#FFF0F4',
+                            200: '#FEC3D4', // Swatch 3: Soft pastel pink
+                            300: '#FBA6C0',
+                        },
+                        rose: {
+                            100: '#FCEBF0',
+                            300: '#F8B6C2',
+                            400: '#F3A1AF', // Swatch 4: Rose pink
+                            500: '#E57B8F',
+                            600: '#D2586E', // CTA buttons
+                            700: '#B03F54',
+                        },
+                        mauve: {
+                            100: '#F3EEF0',
+                            200: '#E3D7DC',
+                            300: '#C7B6BF',
+                            400: '#947A85', // Swatch 5: Dusty mauve taupe
+                            600: '#755A66',
+                            700: '#5E4651',
+                            800: '#46323B',
+                            900: '#2E1F26', // Dark background / text
+                        },
+                        // Remap existing coffee utility tokens to the new palette for overall harmony
+                        coffee: {
+                            50: '#FFF9F6',
+                            100: '#FEE6DC',
+                            200: '#D9E6E2',
+                            300: '#FEC3D4',
+                            400: '#F3A1AF',
+                            500: '#D2586E',
+                            600: '#D2586E',
+                            700: '#755A66',
+                            800: '#46323B',
+                            900: '#2E1F26',
+                        },
+                        cream: '#FFF9F6',
+                        beige: '#FEE6DC',
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and smooth transitions */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF9F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F3A1AF;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D2586E;
+        }
+    </style>
+</head>
+<body class="bg-cream text-mauve-900 font-sans antialiased selection:bg-pink-200 selection:text-mauve-900">
+
+    <!-- Header / Navbar Section -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-cream/90 backdrop-blur-md shadow-sm border-b border-peach-100" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-full bg-rose-600 text-white flex items-center justify-center text-xl shadow-md group-hover:bg-rose-700 transition duration-300">
+                      <img      src="./image/logo.png">
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold text-mauve-900 tracking-tight leading-none">Airin Coffe</span>
+                        <span class="text-xs font-semibold text-rose-600 tracking-widest uppercase">COFFEE</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-mauve-700 hover:text-rose-600 font-medium transition duration-200">หน้าแรก</a>
+                    <a href="#about" class="text-mauve-700 hover:text-rose-600 font-medium transition duration-200">เกี่ยวกับเรา</a>
+                    <a href="#menu" class="text-mauve-700 hover:text-rose-600 font-medium transition duration-200">เมนูแนะนำ</a>
+                    <a href="#why-us" class="text-mauve-700 hover:text-rose-600 font-medium transition duration-200">ทำไมต้องเรา</a>
+                    <a href="#gallery" class="text-mauve-700 hover:text-rose-600 font-medium transition duration-200">บรรยากาศร้าน</a>
+                    <a href="#contact" class="text-mauve-700 hover:text-rose-600 font-medium transition duration-200">ติดต่อเรา</a>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:block">
+                    <a href="#menu" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-rose-600 hover:bg-rose-700 shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-utensils mr-2 text-xs"></i> ดูเมนูเครื่องดื่ม
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-mauve-900 hover:bg-peach-100 focus:outline-none transition duration-200" aria-label="เปิดเมนู">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-peach-200 px-4 pt-2 pb-6 space-y-3 shadow-xl transition-all duration-300">
+            <a href="#hero" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-mauve-900 hover:bg-peach-100 transition">หน้าแรก</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-mauve-900 hover:bg-peach-100 transition">เกี่ยวกับเรา</a>
+            <a href="#menu" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-mauve-900 hover:bg-peach-100 transition">เมนูแนะนำ</a>
+            <a href="#why-us" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-mauve-900 hover:bg-peach-100 transition">ทำไมต้องเรา</a>
+            <a href="#gallery" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-mauve-900 hover:bg-peach-100 transition">บรรยากาศร้าน</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-mauve-900 hover:bg-peach-100 transition">ติดต่อเรา</a>
+            <div class="pt-2">
+                <a href="#menu" class="mobile-nav-link w-full inline-flex items-center justify-center px-5 py-3 rounded-xl text-base font-semibold text-white bg-rose-600 hover:bg-rose-700 shadow transition">
+                    <i class="fa-solid fa-utensils mr-2"></i> ดูเมนูเครื่องดื่ม
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-gradient-to-b from-peach-100 via-pink-100/40 to-cream py-16 md:py-24 lg:py-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Content -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-sage-200 text-sage-800 mb-6 shadow-sm">
+                            <i class="fa-solid fa-star text-rose-600"></i> ต้อนรับสู่อาณาจักรความอร่อยระดับ WOW
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-mauve-900 leading-tight mb-6">
+                            สัมผัสรสชาติกาแฟแท้ <br class="hidden sm:inline">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-rose-400">หอม กรุ่น อบอุ่น</span> ทุกช่วงเวลา
+                        </h1>
+                        <p class="text-base sm:text-lg text-mauve-700 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            <strong>Airin COFFEE</strong> ร้านกาแฟสไตล์ Cozy มอบความสดชื่นด้วยกาแฟคั่วบดคุณภาพ ชาสูตรเข้มข้น และโกโก้รสกลมกล่อม เติมพลังให้วันของคุณมีรอยยิ้มเสมอ
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#menu" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-rose-600 text-white font-semibold text-center hover:bg-rose-700 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-mug-hot mr-2"></i> ดูเมนูเครื่องดื่ม
+                            </a>
+                            <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-full border-2 border-rose-600 text-rose-700 font-semibold text-center hover:bg-pink-100 transition duration-300">
+                                <i class="fa-solid fa-location-dot mr-2"></i> แผนที่ร้าน & เวลาเปิด
+                            </a>
+                        </div>
+
+                        <!-- Stats Highlights -->
+                        <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-peach-200/80 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-bold text-rose-600">100%</p>
+                                <p class="text-xs sm:text-sm text-mauve-600">เมล็ดกาแฟแท้</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-bold text-rose-600">20+</p>
+                                <p class="text-xs sm:text-sm text-mauve-600">เมนูเครื่องดื่ม</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-bold text-rose-600">4.9 ★</p>
+                                <p class="text-xs sm:text-sm text-mauve-600">ความพึงพอใจ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <!-- Background Decorative Circle -->
+                            <div class="absolute -inset-4 bg-gradient-to-r from-pink-200 to-sage-200 rounded-3xl transform rotate-3 blur-sm"></div>
+                            
+                            <!-- Main Hero Image -->
+                            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="บรรยากาศร้าน Airin COFFEE และแก้วกาแฟสด" 
+                                 class="relative rounded-2xl shadow-2xl object-cover w-full h-[380px] sm:h-[450px] transform hover:scale-[1.01] transition duration-500">
+
+                            <!-- Floating Badge Card -->
+                            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-pink-100 hidden sm:flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-full bg-pink-100 text-rose-600 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-mauve-900">คั่วสดใหม่ทุกวัน</p>
+                                    <p class="text-xs text-mauve-600">กลิ่นหอมชวนหลงใหล</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    
+                    <!-- Image Stack -->
+                    <div class="relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" 
+                                 alt="บาริสต้ากำลังชงกาแฟ" 
+                                 class="rounded-2xl shadow-md h-64 sm:h-80 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" 
+                                 alt="บรรยากาศมุมนั่งเล่นในร้านกาแฟ" 
+                                 class="rounded-2xl shadow-md h-64 sm:h-80 w-full object-cover mt-8">
+                        </div>
+                        <div class="absolute -z-10 -bottom-6 -right-6 w-48 h-48 bg-sage-200/60 rounded-full blur-2xl"></div>
+                    </div>
+
+                    <!-- Story & Concept -->
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-peach-100 text-rose-700 font-semibold text-xs sm:text-sm mb-3">
+                            ABOUT OUR COFFEE
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-mauve-900 mb-6">
+                            จุดเริ่มต้นของความตั้งใจ <br>
+                            <span class="text-rose-600">Airin COFFEE</span>
+                        </h2>
+                        <p class="text-mauve-700 mb-4 leading-relaxed">
+                            <strong>Airin COFFEE</strong> เกิดขึ้นจากความแพสชันและความตั้งใจในการสร้างสรรค์พื้นที่พักผ่อนเล็ก ๆ ที่เข้าถึงง่าย ชุมชนนัดพบของคนรักเครื่องดื่ม รสชาติอร่อยในราคาสบายกระเป๋า
+                        </p>
+                        <p class="text-mauve-700 mb-6 leading-relaxed">
+                            เราคัดสรรเมล็ดกาแฟสายพันธุ์ดี นำมาพิถีพิถันชงทีละแก้ว พร้อมเสิร์ฟคู่กับเมนูชา โกโก้เข้มข้น และเครื่องดื่มเพิ่มความสดชื่น เพื่อให้ทุกครั้งที่คุณก้าวเข้ามา จะได้สัมผัสบรรยากาศที่เป็นกันเอง อบอุ่น และประทับใจกลับไปเสมอ
+                        </p>
+
+                        <!-- Key Highlights Bullets -->
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="p-1 rounded-full bg-pink-100 text-rose-600 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <p class="text-sm text-mauve-800 font-medium">พิถีพิถันการชงทุกแก้ว ใส่ใจในทุกรายละเอียด</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="p-1 rounded-full bg-pink-100 text-rose-600 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <p class="text-sm text-mauve-800 font-medium">พื้นที่ผ่อนคลาย บรรยากาศเป็นกันเอง เหมาะสำหรับพักผ่อนหรือนั่งทำงาน</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="p-1 rounded-full bg-pink-100 text-rose-600 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <p class="text-sm text-mauve-800 font-medium">เมนูหลากหลาย ตอบโจทย์ทั้งสายกาแฟ ชา และคนไม่ดื่มคาเฟอีน</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Menu Section -->
+        <section id="menu" class="py-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="px-3 py-1 rounded-full bg-pink-200 text-mauve-900 text-xs sm:text-sm font-semibold tracking-wide">RECOMMENDED MENU</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-mauve-900 mt-3 mb-4">เมนูแนะนำชวนให้ลอง</h2>
+                    <p class="text-mauve-700 text-sm sm:text-base">คัดสรรเครื่องดื่มยอดนิยมประจำร้าน รสชาติเข้มข้น หอมอร่อย ดื่มได้ไม่มีเบื่อ</p>
+                </div>
+
+                <!-- Menu Grid (6 items) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Menu Item 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-peach-100 group flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden h-52">
+                                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80" 
+                                     alt="WOW Signature Latte" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 right-3 bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">BESTSELLER</span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-mauve-900 group-hover:text-rose-600 transition">WOW Signature Latte</h3>
+                                    <span class="text-xl font-extrabold text-rose-600">฿55</span>
+                                </div>
+                                <p class="text-mauve-600 text-sm mb-4 line-clamp-2">เอสเพรสโซเข้มข้นผสมนมสดสูตรพิเศษ นุ่มละมุน หอมกลิ่นกาแฟคั่วกลางอย่างลงตัว</p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex justify-between items-center text-xs text-mauve-600 border-t border-mauve-100 mt-2">
+                            <span><i class="fa-regular fa-snowflake mr-1"></i> เย็น / ร้อน</span>
+                            <span class="font-medium text-sage-800 bg-sage-200 px-2.5 py-1 rounded-md">กาแฟสด</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-peach-100 group flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden h-52">
+                                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Dark Cocoa Deluxe" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 right-3 bg-mauve-700 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">HOT ITEM</span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-mauve-900 group-hover:text-rose-600 transition">Dark Cocoa Deluxe</h3>
+                                    <span class="text-xl font-extrabold text-rose-600">฿50</span>
+                                </div>
+                                <p class="text-mauve-600 text-sm mb-4 line-clamp-2">โกโก้นำเข้าพรีเมียม เข้มข้นสะใจ สายโกโก้เข้มสไตล์ดาร์กไม่ควรพลาด</p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex justify-between items-center text-xs text-mauve-600 border-t border-mauve-100 mt-2">
+                            <span><i class="fa-regular fa-snowflake mr-1"></i> เย็น / ร้อน / ปั่น</span>
+                            <span class="font-medium text-rose-700 bg-pink-100 px-2.5 py-1 rounded-md">โกโก้</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-peach-100 group flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden h-52">
+                                <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Thai Tea Cream Cheese" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-mauve-900 group-hover:text-rose-600 transition">Thai Tea Latte</h3>
+                                    <span class="text-xl font-extrabold text-rose-600">฿45</span>
+                                </div>
+                                <p class="text-mauve-600 text-sm mb-4 line-clamp-2">ชาไทยแท้กลิ่นหอมชาไทยโบราณ ชงสดแก้วต่อแก้ว หวานมันกำลังดี</p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex justify-between items-center text-xs text-mauve-600 border-t border-mauve-100 mt-2">
+                            <span><i class="fa-regular fa-snowflake mr-1"></i> เย็น / ปั่น</span>
+                            <span class="font-medium text-mauve-800 bg-peach-100 px-2.5 py-1 rounded-md">ชาไทย</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 4 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-peach-100 group flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden h-52">
+                                <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Matcha Green Tea" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-mauve-900 group-hover:text-rose-600 transition">Uji Matcha Latte</h3>
+                                    <span class="text-xl font-extrabold text-rose-600">฿60</span>
+                                </div>
+                                <p class="text-mauve-600 text-sm mb-4 line-clamp-2">มัทฉะแท้ 100% จากอุจิ ประเทศญี่ปุ่น หอมกลิ่นชาเขียวแท้ๆ กลมกล่อม</p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex justify-between items-center text-xs text-mauve-600 border-t border-mauve-100 mt-2">
+                            <span><i class="fa-regular fa-snowflake mr-1"></i> เย็น / ร้อน</span>
+                            <span class="font-medium text-sage-800 bg-sage-200 px-2.5 py-1 rounded-md">ชาเขียว</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 5 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-peach-100 group flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden h-52">
+                                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Caramel Macchiato" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-mauve-900 group-hover:text-rose-600 transition">Caramel Macchiato</h3>
+                                    <span class="text-xl font-extrabold text-rose-600">฿60</span>
+                                </div>
+                                <p class="text-mauve-600 text-sm mb-4 line-clamp-2">กาแฟนมราดซอสคาราเมลหอมหวาน ท็อปด้วยฟองนมนุ่มนวล</p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex justify-between items-center text-xs text-mauve-600 border-t border-mauve-100 mt-2">
+                            <span><i class="fa-regular fa-snowflake mr-1"></i> เย็น / ร้อน</span>
+                            <span class="font-medium text-rose-700 bg-pink-100 px-2.5 py-1 rounded-md">กาแฟสด</span>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 6 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-peach-100 group flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden h-52">
+                                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Yuzu Orange Cold Brew" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 right-3 bg-rose-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">REFRESHING</span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-mauve-900 group-hover:text-rose-600 transition">Yuzu Black Coffee</h3>
+                                    <span class="text-xl font-extrabold text-rose-600">฿65</span>
+                                </div>
+                                <p class="text-mauve-600 text-sm mb-4 line-clamp-2">กาแฟดำเข้มข้นผสมน้ำส้มยูสุแท้ สดชื่น เปรี้ยวหวานกำลังดี เติมความตื่นตัว</p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-0 flex justify-between items-center text-xs text-mauve-600 border-t border-mauve-100 mt-2">
+                            <span><i class="fa-regular fa-snowflake mr-1"></i> เย็น</span>
+                            <span class="font-medium text-mauve-800 bg-peach-100 px-2.5 py-1 rounded-md">ฟรุตตี้กาแฟ</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Price Note Disclaimer -->
+                <div class="text-center mt-10 text-xs text-mauve-600">
+                    * ราคาและเมนูอาจมีการเปลี่ยนแปลงตามฤดูกาล สามารถสอบถามพนักงานเพิ่มเติมที่หน้าร้าน
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="px-3 py-1 rounded-full bg-sage-200 text-sage-800 text-xs sm:text-sm font-semibold">WHY CHOOSE US</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-mauve-900 mt-3 mb-4">จุดเด่นที่ทำให้เราแตกต่าง</h2>
+                    <p class="text-mauve-600 text-sm sm:text-base">เหตุผลที่คุณจะหลงรักกาแฟและบริการของ Airin COFFEE</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Feature Card 1 -->
+                    <div class="bg-cream p-8 rounded-2xl border border-peach-100 shadow-sm hover:shadow-md transition duration-300 text-center hover:-translate-y-1">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-rose-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-mauve-900 mb-3">วัตถุดิบคุณภาพสูง</h3>
+                        <p class="text-mauve-600 text-sm leading-relaxed">
+                            เลือกสรรเมล็ดกาแฟแท้คั่วสดใหม่ นมสดแท้ และวัตถุดิบเกรดพรีเมียมในทุกแก้ว
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="bg-cream p-8 rounded-2xl border border-peach-100 shadow-sm hover:shadow-md transition duration-300 text-center hover:-translate-y-1">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-rose-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-mug-saucer"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-mauve-900 mb-3">เครื่องดื่มหลากหลาย</h3>
+                        <p class="text-mauve-600 text-sm leading-relaxed">
+                            ตอบโจทย์ทั้งสายกาแฟเข้มข้น ชารสดี โกโก้ และเครื่องดื่มดับร้อนรสสดชื่น
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="bg-cream p-8 rounded-2xl border border-peach-100 shadow-sm hover:shadow-md transition duration-300 text-center hover:-translate-y-1">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-rose-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-mauve-900 mb-3">ราคาเข้าถึงง่าย</h3>
+                        <p class="text-mauve-600 text-sm leading-relaxed">
+                            คุ้มค่าคุ้มราคา รสชาติระดับคาเฟ่ชั้นนำ ในราคาเริ่มต้นสบายกระเป๋า
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="bg-cream p-8 rounded-2xl border border-peach-100 shadow-sm hover:shadow-md transition duration-300 text-center hover:-translate-y-1">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-rose-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-mauve-900 mb-3">บรรยากาศเป็นกันเอง</h3>
+                        <p class="text-mauve-600 text-sm leading-relaxed">
+                            อบอุ่น เป็นมิตร บาริสต้ายิ้มแย้มต้อนรับพร้อมให้คำแนะนำเครื่องดื่มทุกแก้ว
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="px-3 py-1 rounded-full bg-pink-200 text-mauve-900 text-xs sm:text-sm font-semibold">OUR ATMOSPHERE</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-mauve-900 mt-3 mb-4">บรรยากาศและรอยยิ้มในร้าน</h2>
+                    <p class="text-mauve-600 text-sm sm:text-base">สัมผัสความอบอุ่นผ่านมุมต่าง ๆ ของ Airin COFFEE</p>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                    
+                    <div class="overflow-hidden rounded-2xl shadow-md group relative h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" 
+                             alt="เมล็ดกาแฟคุณภาพ" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mauve-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm font-medium">เมล็ดกาแฟคัดสรร</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-2xl shadow-md group relative h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" 
+                             alt="ลาเต้อาร์ตสวยงาม" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mauve-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm font-medium">ศิลปะบนฟองนม Latte Art</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-2xl shadow-md group relative h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" 
+                             alt="เคาน์เตอร์ชงกาแฟ" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mauve-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm font-medium">มุมเคาน์เตอร์กาแฟอบอุ่น</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-2xl shadow-md group relative h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=600&q=80" 
+                             alt="เบเกอรี่สดใหม่" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mauve-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm font-medium">ขนมและครัวซองต์ทานคู่กาแฟ</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-2xl shadow-md group relative h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=600&q=80" 
+                             alt="มุมที่นั่งพักผ่อน" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mauve-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm font-medium">มุมนั่งทำงานและพักผ่อน</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-2xl shadow-md group relative h-48 sm:h-64">
+                        <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=600&q=80" 
+                             alt="เครื่องดื่มเย็นสดชื่น" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mauve-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm font-medium">เครื่องดื่มดับร้อนทุกเมนู</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Footer Section -->
+        <section id="contact" class="py-20 bg-mauve-900 text-cream relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Store Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 rounded-full bg-rose-600 text-cream flex items-center justify-center text-2xl shadow">
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Airin COFFEE</h3>
+                                <p class="text-xs text-pink-200 tracking-widest uppercase">Tasty & Cozy Drinks</p>
+                            </div>
+                        </div>
+
+                        <p class="text-mauve-200 text-sm leading-relaxed">
+                            ร้านกาแฟขนาดเล็กที่ตั้งใจมอบความสุขผ่านเครื่องดื่มทุกแก้ว ยินดีต้อนรับทุกท่านครับ!
+                        </p>
+
+                        <div class="space-y-4 text-sm pt-2">
+                            <!-- Location -->
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-location-dot text-rose-400 text-lg mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-white">ที่ตั้งร้าน [ข้อมูลตัวอย่าง Placeholder]:</p>
+                                    <p class="text-mauve-200">อาคาร DTI มหาวิทยาลัยเอเชียอาคเนย์ (SAU) ถนนเพชรเกษม แขวงหนองค้างพลู เขตหนองแขม กรุงเทพมหานคร 10160</p>
+                                </div>
+                            </div>
+
+                            <!-- Opening Hours -->
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-clock text-rose-400 text-lg mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-white">เวลาเปิด - ปิด:</p>
+                                    <p class="text-mauve-200">จันทร์ - ศุกร์: 07:30 น. - 17:00 น.</p>
+                                    <p class="text-mauve-200">เสาร์ - อาทิตย์: 08:30 น. - 16:30 น.</p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone text-rose-400 text-lg"></i>
+                                <div>
+                                    <span class="font-semibold text-white">เบอร์โทรศัพท์:</span>
+                                    <span class="text-mauve-200 ml-1">08X-XXX-XXXX [โปรดแก้ไข]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="pt-4">
+                            <p class="text-sm font-semibold text-white mb-3">ติดตามข่าวสารและโปรโมชัน:</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="w-10 h-10 rounded-full bg-mauve-800 hover:bg-rose-600 text-pink-200 flex items-center justify-center transition duration-300">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-mauve-800 hover:bg-rose-600 text-pink-200 flex items-center justify-center transition duration-300">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-mauve-800 hover:bg-rose-600 text-pink-200 flex items-center justify-center transition duration-300">
+                                    <i class="fa-brands fa-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map / Location Box Placeholder -->
+                    <div class="lg:col-span-7 bg-mauve-800/80 rounded-2xl p-6 border border-mauve-700/60 shadow-xl flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold text-white mb-2 flex items-center">
+                                <i class="fa-solid fa-map-location-dot text-rose-400 mr-2"></i> แผนที่ร้าน
+                            </h4>
+                            <p class="text-xs text-mauve-200 mb-4">
+                                [ส่วนแสดงแผนที่ตัวอย่าง - สามารถนำ Google Maps Embed Code มาใส่แทนที่ส่วนนี้ได้]
+                            </p>
+                        </div>
+
+                        <!-- Visual Map Placeholder Card -->
+                        <div class="relative w-full h-64 sm:h-72 bg-mauve-950 rounded-xl overflow-hidden border border-mauve-700 flex flex-col items-center justify-center text-center p-6 group">
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Map background placeholder" 
+                                 class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-35 transition duration-500">
+                            
+                            <div class="relative z-10">
+                                <div class="w-12 h-12 rounded-full bg-rose-500 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-3 shadow-lg animate-bounce">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h5 class="text-white font-bold text-base mb-1">Airin COFFEE</h5>
+                                <p class="text-xs text-mauve-200 max-w-sm mx-auto mb-4">ใกล้อาคารเรียน เดินทางสะดวก พร้อมมีที่จอดรถหน้าร้าน</p>
+                                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow transition">
+                                    <i class="fa-solid fa-diamond-turn-right mr-1.5"></i> นำทางด้วย Google Maps
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-xs text-mauve-300 text-right">
+                            * รูปภาพและตำแหน่งบนแผนที่เป็นเพียงข้อมูลตัวอย่างสำหรับประชาสัมพันธ์
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Copyright Divider -->
+                <div class="mt-16 pt-8 border-t border-mauve-800 flex flex-col sm:flex-row items-center justify-between text-xs text-mauve-300 gap-4">
+                    <p>© 2026 Airin COFFEE. All Rights Reserved.</p>
+                    <p class="flex items-center">
+                        Crafted by <i class="fa-solid fa-heart text-pink-300 mx-1"></i> Airin Hatsadawan 6952D10018
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Vanilla JavaScript Integration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-xmark');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close mobile menu when clicking any navigation link
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    });
+                });
+            }
+
+            // Navbar Shadow Effect on Scroll
+            const mainHeader = document.getElementById('main-header');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 20) {
+                    mainHeader.classList.add('shadow-md');
+                } else {
+                    mainHeader.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
